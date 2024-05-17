@@ -5,7 +5,6 @@ public class Games {
 	private int id;
 	
 	private String nickName;
-	private String password;
 	private String teamName;
 	private double EAFCpoints;
 	private double coins;
@@ -46,12 +45,6 @@ public class Games {
 	}
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
 	}
 	
 	

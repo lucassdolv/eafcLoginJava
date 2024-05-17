@@ -22,15 +22,14 @@ public class accountsRepository {
 		try (Scanner sc = new Scanner(database)){
 			while (sc.hasNextLine()) {
 				String[] data = sc.nextLine().split(";");
-				if (data.length >= 7) {
+				if (data.length >= 6) {
 					Games conta = new Games();
 					conta.setId(Integer.parseInt(data[0]));
 					conta.setNickName(data[1]);
-					conta.setPassword(data[2]);
-					conta.setTeamName(data[3]);
-					conta.setCoins(Double.parseDouble(data[4]));
-					conta.setEAFCpoints(Double.parseDouble(data[5]));
-					conta.setExp(Double.parseDouble(data[6]));
+					conta.setTeamName(data[2]);
+					conta.setCoins(Double.parseDouble(data[3]));
+					conta.setEAFCpoints(Double.parseDouble(data[4]));
+					conta.setExp(Double.parseDouble(data[5]));
 				}
 			}
 		}catch (FileNotFoundException e) {
@@ -63,14 +62,14 @@ public class accountsRepository {
 		saveContas();
 	}
 	public void addConta(Games conta) {
-		conta.setId(1);;
+		conta.setId(getNextId());
 		contas.add(conta);
 		saveContas();
 	}
 	private void saveContas() {
 		try (PrintWriter writer = new PrintWriter(new FileOutputStream(database, false))){
 			for(Games conta : contas) {
-				String data = conta.getId() + ";" + conta.getNickName() + ";" + conta.getPassword() + ";" + conta.getTeamName() + ";" + conta.getCoins() + ";" + conta.getEAFCpoints() + ";" + conta.getExp();
+				String data = conta.getId() + ";" + conta.getNickName() + ";"  + conta.getTeamName() + ";" + conta.getCoins() + ";" + conta.getEAFCpoints() + ";" + conta.getExp();
 				writer.println(data);
 			}
 		} catch (FileNotFoundException e) {

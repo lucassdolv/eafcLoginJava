@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.contasController">
    <children>
       <AnchorPane prefHeight="511.0" prefWidth="998.0">
          <children>
@@ -68,8 +68,8 @@
                               <TextField fx:id="EAFCpoints" layoutX="12.0" layoutY="130.0" prefHeight="25.0" prefWidth="180.0" />
                               <TextField fx:id="coins" layoutX="12.0" layoutY="177.0" prefHeight="25.0" prefWidth="180.0" />
                               <TextField fx:id="exp" layoutX="12.0" layoutY="224.0" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: 3E3636;" />
-                              <Button layoutX="12.0" layoutY="268.0" mnemonicParsing="false" onAction="#cadastrar" prefHeight="25.0" prefWidth="80.0" text="ADICIONAR" />
-                              <Button layoutX="107.0" layoutY="268.0" mnemonicParsing="false" onAction="#limpar" prefHeight="25.0" prefWidth="80.0" text="LIMPAR" />
+                              <Button layoutX="12.0" layoutY="268.0" mnemonicParsing="false" onAction="#cadastrar" prefHeight="25.0" prefWidth="85.0" text="CADASTRAR" />
+                              <Button layoutX="107.0" layoutY="268.0" mnemonicParsing="false" onAction="#limpar" prefHeight="25.0" prefWidth="85.0" text="LIMPAR" />
                               <TextField fx:id="teamName" layoutX="12.0" layoutY="83.0" prefHeight="25.0" prefWidth="180.0" />
                               <Text fill="WHITE" layoutX="14.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Name">
                                  <font>
@@ -84,11 +84,13 @@
                               </Text>
                            </children>
                         </AnchorPane>
-                        <TableView cache="true" layoutX="235.0" prefHeight="317.0" prefWidth="345.0" style="-fx-background-color: black;">
+                        <TableView fx:id="tableAccounts" cache="true" layoutX="235.0" prefHeight="317.0" prefWidth="345.0" style="-fx-background-color: black;">
                           <columns>
-                            <TableColumn prefWidth="112.0" text="c1" />
-                            <TableColumn prefWidth="122.0" style="-fx-background-color: darkgray;" text="c2" />
-                              <TableColumn minWidth="8.0" prefWidth="110.0" text="c3" />
+                            <TableColumn fx:id="cNickName" minWidth="20.0" prefWidth="69.0" text="Nickname" />
+                            <TableColumn fx:id="cTeamName" minWidth="20.0" prefWidth="69.0" style="-fx-background-color: darkgray;" text="Team Name" />
+                              <TableColumn fx:id="cEAFCpoints" minWidth="20.0" prefWidth="69.0" text="EAFC Points" />
+                              <TableColumn fx:id="cCoins" minWidth="20.0" prefWidth="69.0" style="-fx-background-color: darkgray;" text="Coins" />
+                              <TableColumn fx:id="cEXP" minWidth="20.0" prefWidth="69.0" text="EXP" />
                           </columns>
                         </TableView>
                      </children>
