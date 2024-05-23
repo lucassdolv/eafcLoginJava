@@ -17,6 +17,7 @@ public class accountsRepository {
 	public accountsRepository() {
 		this.database = new File("database-contas.txt");
 		this.contas = new ArrayList<>();
+		loadContas();
 	}
 	private void loadContas() {
 		try (Scanner sc = new Scanner(database)){
