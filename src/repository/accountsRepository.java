@@ -31,6 +31,8 @@ public class accountsRepository {
 					conta.setCoins(Double.parseDouble(data[3]));
 					conta.setEAFCpoints(Double.parseDouble(data[4]));
 					conta.setExp(Double.parseDouble(data[5]));
+					
+					contas.add(conta);
 				}
 			}
 		}catch (FileNotFoundException e) {
